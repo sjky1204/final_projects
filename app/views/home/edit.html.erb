@@ -1,0 +1,23 @@
+<h3 class="new-text"> <%=@post.id %> 번 post를 수정할 화면입니다.</h3>
+<!--<form action="/home/update/<%=@post.id %>" method="post">-->
+<!--    <p>제목</p>-->
+<!--    <input type="text" name="input_title" value="<%= @post.title%>">-->
+<!--    <p>내용</p>-->
+<!--    <input type="text" name="input_content"  value="<%= @post.content%>">-->
+<!--    <p>제출</p>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<div class="container">
+<form action="/home/update/<%=@post.id %>" method="post">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Title</label>
+    <input type="text" name="input_title" class="form-control" value="<%= @post.title%>" id="formGroupExampleInput">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Content</label>
+    <input type="text" name="input_content" class="form-control" value="<%= @post.content%>" id="formGroupExampleInput2" >
+  </div>
+  <input type="submit">
+</form>
+</div>
+

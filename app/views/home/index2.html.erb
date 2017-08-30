@@ -1,0 +1,48 @@
+<style>
+  .imdongqt {
+    float: right;
+  }
+</style>
+
+<center><h1>게시판 글 List </h1></center>
+
+<br>
+<div class="imdongqt">
+<% if user_signed_in? %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+<% else %>
+  <%= link_to 'Sign in', new_user_session_path %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+<% end %>
+</div>
+
+<h4><a href="/home/index">새 글 쓰기</a></h4>
+<!--<% @posts.each do |post| %>-->
+<!--    <h3><a href="/home/show/<%= post.id %>"><%= post.id %>:<%= post.title %></a></h3>-->
+<!--<% end %>-->
+
+
+
+   <table class="table">
+  <thead>
+    <tr>
+      <th>번호</th>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>시간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.reverse.each do |post| %>
+    <tr>
+      <th scope="row"><%= post.id %></th>
+      <td><a href="/home/show/<%= post.id %>"><%= post.title %></td>
+      <td></td>
+      <td><%=post.created_at%></td>
+    </tr>
+    </a>
+    <% end %>
+  </tbody>
+</table>
+
+
